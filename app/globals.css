@@ -1,0 +1,81 @@
+:root {
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: rgba(0, 0, 0, 0.6);
+  --card: rgba(0, 0, 0, 0.04);
+  --border: rgba(0, 0, 0, 0.12);
+  --font-scale: 1;
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b0f14;
+  --fg: #e8eef6;
+  --muted: rgba(232, 238, 246, 0.7);
+  --card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.16);
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* Common container */
+.reader {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  line-height: calc(1.6 * var(--font-scale));
+  font-size: calc(16px * var(--font-scale));
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: color-mix(in oklab, var(--bg) 75%, transparent);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-weight: 700;
+}
+
+.toolbar-right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(1.05);
+}
+
+.pill {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-size: 13px;
+  opacity: 0.9;
+}
