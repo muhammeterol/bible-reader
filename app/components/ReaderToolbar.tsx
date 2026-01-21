@@ -34,37 +34,59 @@ export default function ReaderToolbar() {
           KJV Reader
         </Link>
       </div>
+<div className="toolbar-right">
+  <Link className="btn" href="/search" style={{ textDecoration: "none" }}>
+    Search
+  </Link>
 
-      <div className="toolbar-right">
-        <Link className="btn" href="/search" style={{ textDecoration: "none" }}>
-          Search
-        </Link>
+  <Link className="btn" href="/about" style={{ textDecoration: "none" }}>
+    About
+  </Link>
 
-        <button
-          className="btn"
-          onClick={() => setFontScale((s) => Math.max(0.85, Math.round((s - 0.1) * 100) / 100))}
-          aria-label="Decrease font size"
-          type="button"
-        >
-          A-
-        </button>
+  <Link className="btn" href="/privacy" style={{ textDecoration: "none" }}>
+    Privacy
+  </Link>
 
-        <span className="pill" aria-label="Font scale">
-          {scaleLabel}
-        </span>
+  <Link className="btn" href="/contact" style={{ textDecoration: "none" }}>
+    Contact
+  </Link>
 
-        <button
-          className="btn"
-          onClick={() => setFontScale((s) => Math.min(1.6, Math.round((s + 0.1) * 100) / 100))}
-          aria-label="Increase font size"
-          type="button"
-        >
-          A+
-        </button>
+  <a
+    className="btn"
+    href="https://buymeacoffee.com/"
+    target="_blank"
+    rel="noreferrer"
+    style={{ textDecoration: "none" }}
+    title="Support this project"
+  >
+    Donate
+  </a>
 
-        <button className="btn" onClick={() => setTheme(isDark ? "light" : "dark")} type="button">
-          {isDark ? "Light" : "Dark"}
-        </button>
+  <button
+    className="btn"
+    onClick={() => setFontScale((s) => Math.max(0.85, Math.round((s - 0.1) * 100) / 100))}
+    aria-label="Decrease font size"
+    type="button"
+  >
+    A-
+  </button>
+
+  <span className="pill" aria-label="Font scale">
+    {scaleLabel}
+  </span>
+
+  <button
+    className="btn"
+    onClick={() => setFontScale((s) => Math.min(1.6, Math.round((s + 0.1) * 100) / 100))}
+    aria-label="Increase font size"
+    type="button"
+  >
+    A+
+  </button>
+
+  <button className="btn" onClick={() => setTheme(isDark ? "light" : "dark")} type="button">
+    {isDark ? "Light" : "Dark"}
+  </button> 
       </div>
     </div>
   );
