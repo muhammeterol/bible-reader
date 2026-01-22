@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import ContinueButton from "@/app/components/ContinueButton";
 
 type Theme = "light" | "dark";
 
@@ -35,6 +36,7 @@ export default function ReaderToolbar() {
         </Link>
       </div>
 <div className="toolbar-right">
+  <ContinueButton />
   <Link className="btn" href="/search" style={{ textDecoration: "none" }}>
     Search
   </Link>

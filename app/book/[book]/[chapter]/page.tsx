@@ -3,6 +3,7 @@ import { getBookBySlug } from "@/lib/bible";
 import { readChapter } from "@/lib/content";
 import { notFound } from "next/navigation";
 import ReaderToolbar from "@/app/components/ReaderToolbar";
+import MarkLastRead from "@/app/components/MarkLastRead";
 
 export default async function ChapterPage({
   params,
@@ -26,6 +27,7 @@ export default async function ChapterPage({
   return (
     <>
       <ReaderToolbar />
+      <MarkLastRead book={book.slug} chapter={chapNum} />
       <main className="reader">
         <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 14 }}>
           <Link href={`/book/${book.slug}`}>← {book.name}</Link>

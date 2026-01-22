@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BOOKS } from "@/lib/bible";
 import ReaderToolbar from "@/app/components/ReaderToolbar";
+import LastRead from "@/app/components/LastRead";
 
 export default function Home() {
   const ot = BOOKS.filter((b) => b.testament === "OT");
@@ -15,6 +16,8 @@ export default function Home() {
           Simple public-domain Bible reading website.
         </p>
 
+       <LastRead />
+          
         <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
           <section style={{ flex: 1, minWidth: 260 }}>
             <h2 style={{ fontSize: 22 }}>Old Testament</h2>

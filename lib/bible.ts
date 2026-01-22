@@ -13,3 +13,6 @@ export const BOOKS: Book[] = [
 export function getBookBySlug(slug: string): Book | undefined {
   return BOOKS.find((b) => b.slug === slug);
 }
+export function getBookNameBySlug(slug: string): string {
+  return getBookBySlug(slug)?.name ?? slug.replace(/_/g, " ");
+}
